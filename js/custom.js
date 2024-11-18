@@ -9,22 +9,37 @@ $(function () {
         },
         autoplay: { delay: 3000 },
         slideActiveClass: 'on',
+        autoplay: 'on',
+        loop: 'on'
     });
 
     var swiper = new Swiper(".main_best_slide", {
         spaceBetween: 20,
-        slidesPerView: '4',
+        slidesPerView: '2',
+        loop: true,
         scrollbar: {
             el: ".swiper-scrollbar",
             hide: true,
         },
         navigation: {
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
+            nextEl: ".next",
+            prevEl: ".prev",
         },
 
+        breakpoints: {
 
+            768: {
+                slidesPerView: 4,  //브라우저가 768보다 클 때
+                spaceBetween: 20,
+            },
+            1024: {
+                slidesPerView: 4,  //브라우저가 1024보다 클 때
+                spaceBetween: 20,
+
+            },
+        },
     });
+
 
 });
 
